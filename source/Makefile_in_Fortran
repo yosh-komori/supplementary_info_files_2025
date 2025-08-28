@@ -1,0 +1,25 @@
+# Makefile_for_Fortran
+# Ver. 0 (28-Aug-2025)
+#   This is available in Intel oneAPI 2025.
+#   You can input the following on a command line to compile
+#   the Fortran codes:
+#   make -f Makefile_for_Fortran
+#
+
+#FCC= ifort
+FCC=ifx
+
+####################
+Sub1= Copy_Ab_values_for_C
+####################
+SubSRC1= $(Sub1).f90
+SubOBJ1= $(Sub1).obj
+##################################################
+
+ADDOBJS   = $(SubOBJ1)
+
+all: $(ADDOBJS)
+
+$(SubOBJ1) : $(SubSRC1)
+	$(FCC) -c $(SubSRC1)
+
